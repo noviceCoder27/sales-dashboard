@@ -59,8 +59,8 @@ const BarGraph = ({data}) => {
       }
 
     return (
-        <Box w = "100%" h= "50vh" minH = "300px" minW = "300px">
-            <Bar data = {barData} options = {options}/>
+        <Box w = "100%" h= "50vh"  minH = "300px" minW = "500px" ml = {{base: "-5rem",md: "0"}}>
+            <Bar data = {barData} options = {options} />
         </Box>
     )
 }
