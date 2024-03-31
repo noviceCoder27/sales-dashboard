@@ -29,7 +29,7 @@ const Navbar = () => {
             </Heading>
             <Box position = "relative" fontSize="2rem" border = "2px solid black" borderRadius= "50%" p = "0.5rem" _hover={{bgColor: "#fcfcc5"}} cursor= "pointer"  onClick = {() => setToggleOpen(prev => !prev)}>
                 <CiUser />
-                {toggleOpen && <Flex direction = "column" alignItems ="center" gap = "1rem" position = "absolute" left = "-8rem" top = "3rem" bgColor = "white" p = "1rem 2rem" borderRadius="10px" boxShadow = "0px 8px 24px rgba(149, 157, 165, 0.2)">
+                {toggleOpen && <Flex direction = "column" alignItems ="center" gap = "1rem" position = "absolute" zIndex = "2" left = "-8rem" top = "3rem" bgColor = "white" p = "1rem 2rem" borderRadius="10px" boxShadow = "0px 8px 24px rgba(149, 157, 165, 0.2)">
                     <Text fontSize = "md" fontWeight= "600" p = "0.5rem" borderRadius = "8px" _hover = {{bgColor: "#f7adb2"}}>
                         <Link to = "/list">Products</Link>
                     </Text>

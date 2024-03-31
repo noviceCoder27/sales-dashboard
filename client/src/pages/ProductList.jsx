@@ -35,7 +35,7 @@ const ProductList = () => {
                 <Box p = "3rem">
                     <TableContainer>
                         <Table variant='striped' colorScheme='teal'>
-                            <TableCaption>List of all products</TableCaption>
+                            <TableCaption>List all products</TableCaption>
                             <Thead>
                             <Tr>
                                 <Th>Name</Th>

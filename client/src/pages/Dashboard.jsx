@@ -1,4 +1,4 @@
-import { Box, Flex, Spinner } from '@chakra-ui/react'
+import { Box, Flex, Select, Spinner } from '@chakra-ui/react'
 import { profitMargin, totalProfit, totalQuantity, totalSum } from './../utils/calculations';
 import Card from '../components/Card';
 import BarGraph from '../components/graph/BarGraph';
@@ -6,12 +6,13 @@ import PieChart from '../components/graph/PieChart';
 import LineGraph from '../components/graph/LineGraph';
 import { useProductContext } from '../context/ProductContext';
 import Navbar from '../components/Navbar';
+import FilterSelect from '../components/FilterSelect';
 
 
 
 const Dashboard = () => {
 
-  const {products} = useProductContext();
+  const {products,graphData} = useProductContext();
 
   return (
     <Flex minH = "100vh" direction= "column" >
@@ -25,17 +26,20 @@ const Dashboard = () => {
             <Card displayText={`${totalQuantity(products)}`} text = {"Sum of Quantity"} />
             <Card displayText={`${profitMargin(products)}%`} text = {"Profit Margin"}/>
           </Flex>
-          <Flex mt = "10rem">
-            <BarGraph data = {products}/>
+          <Flex mt = "10rem" postion = "relative">
+            <BarGraph data = {graphData.bar}/>
+            <FilterSelect w= "fit-content" postion = "absolute" right = "5rem" graphtype = {"bar"}/>
           </Flex>
         </Flex>
         <Flex direction = "column" w = "50%">
-          <Flex justifyContent= "center" w = "100%" >
-            <PieChart data = {products}/>
+          <Flex justifyContent= "center" w = "100%" position = "relative">
+            <PieChart data = {graphData.pie}/>
+            <FilterSelect w= "fit-content" postion = "absolute" right = "-5rem" graphtype = {"pie"}/>
           </Flex>
-          <Flex justifyContent= "center" mt = "5rem">
-            <Box mt = "2rem">
-              <LineGraph data = {products}/>
+          <Flex justifyContent= "center" mt = "5rem" position = "relative">
+            <Box mt = "2rem" maxW = "600px" overflowX= "scroll">
+              <LineGraph data = {graphData.line}/>
+              <FilterSelect w= "fit-content" postion = "absolute" top = "-25rem" left = "70%" graphtype = {"line"}/>
             </Box>
           </Flex>
         </Flex>

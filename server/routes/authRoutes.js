@@ -21,7 +21,10 @@ router.get('/twitter/callback', passport.authenticate('twitter'),
 );
 
 router.get('/logout', (req,res) => {
-    res.clearCookie('connect.sid');
+    req.session.destroy(() => {
+        res.clearCookie('connect.sid');
+        res.send({msg: "Session ended"})
+    });
 })
 
 module.exports = router

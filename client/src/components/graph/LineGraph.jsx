@@ -48,6 +48,12 @@ const LineGraph = ({data}) => {
           .x(function(d) { return x(d.date) })
           .y(function(d) { return y(d.quantity) })
         )
+      svg.append("text")
+      .attr("x", "10rem" )
+      .attr("y", "2px")
+      .style("text-anchor", "middle")
+      .style("font-weight","bold")
+      .text("Orders placed vs Time Period");
     }
   }, [data]);
 
