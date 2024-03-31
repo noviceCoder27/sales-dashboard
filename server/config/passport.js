@@ -7,7 +7,7 @@ const configurePassport = () => {
     passport.use(new GoogleStrategy({
         clientID: process.env.GOOGLE_CLIENT_ID,
         clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-        callbackURL: "http://localhost:3000/auth/google/callback"
+        callbackURL: "https://sales-dashboard-orpin.vercel.app/auth/google/callback"
     },
     async function(accessToken, refreshToken, profile, cb) {
         try {
@@ -26,7 +26,7 @@ const configurePassport = () => {
     passport.use(new TwitterStrategy({
         consumerKey: process.env.TWITTER_CONSUMER_KEY,
         consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-        callbackURL: "http://localhost:3000/auth/twitter/callback"
+        callbackURL: "https://sales-dashboard-orpin.vercel.app/auth/twitter/callback"
     },
     async function(token, tokenSecret, profile, cb) {
         try {
