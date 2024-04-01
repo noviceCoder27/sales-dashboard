@@ -45,9 +45,9 @@ This section will guide you on how to use Chart.js and D3.js to create bar, pie,
 
 Data structures used in the project are
 
-- Bar Graph
-- Pie Graph
-- Line Graph
+- Bar Graph - For plotting order count per state
+- Pie Graph - For plotting payment methods 
+- Line Graph - For plotting orders placed in a particular time period
 
 ## Bar Chart and Pie Chart with Chart.js
 
